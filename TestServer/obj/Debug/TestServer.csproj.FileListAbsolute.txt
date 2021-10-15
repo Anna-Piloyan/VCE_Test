@@ -1,0 +1,48 @@
+D:\ITSTEP\MyProject_TestCreate\TestServer\obj\Debug\TestServer.csproj.AssemblyReference.cache
+D:\ITSTEP\MyProject_TestCreate\TestServer\obj\Debug\TestServer.Form1.resources
+D:\ITSTEP\MyProject_TestCreate\TestServer\obj\Debug\TestServer.Properties.Resources.resources
+D:\ITSTEP\MyProject_TestCreate\TestServer\obj\Debug\TestServer.csproj.GenerateResource.cache
+D:\ITSTEP\MyProject_TestCreate\TestServer\obj\Debug\TestServer.csproj.CoreCompileInputs.cache
+D:\ITSTEP\MyProject_TestCreate\TestServer\bin\Debug\TestServer.exe.config
+D:\ITSTEP\MyProject_TestCreate\TestServer\bin\Debug\TestServer.exe
+D:\ITSTEP\MyProject_TestCreate\TestServer\bin\Debug\TestServer.pdb
+D:\ITSTEP\MyProject_TestCreate\TestServer\bin\Debug\EntityFramework.dll
+D:\ITSTEP\MyProject_TestCreate\TestServer\bin\Debug\EntityFramework.SqlServer.dll
+D:\ITSTEP\MyProject_TestCreate\TestServer\bin\Debug\Repository.dll
+D:\ITSTEP\MyProject_TestCreate\TestServer\bin\Debug\Repository.pdb
+D:\ITSTEP\MyProject_TestCreate\TestServer\bin\Debug\Repository.dll.config
+D:\ITSTEP\MyProject_TestCreate\TestServer\bin\Debug\EntityFramework.xml
+D:\ITSTEP\MyProject_TestCreate\TestServer\bin\Debug\EntityFramework.SqlServer.xml
+D:\ITSTEP\MyProject_TestCreate\TestServer\obj\Debug\TestServer.csproj.CopyComplete
+D:\ITSTEP\MyProject_TestCreate\TestServer\obj\Debug\TestServer.exe
+D:\ITSTEP\MyProject_TestCreate\TestServer\obj\Debug\TestServer.pdb
+D:\ITSTEP\MyProject_TestCreate\TestServer\obj\Debug\TestServer.Form2.resources
+D:\ITSTEP\MyProject_TestCreate\TestServer\bin\Debug\LibraryClass.dll
+D:\ITSTEP\MyProject_TestCreate\TestServer\bin\Debug\LibraryClass.pdb
+D:\ITSTEP\MyProject_TestCreate\TestServer\bin\Debug\DAL1.dll
+D:\ITSTEP\MyProject_TestCreate\TestServer\bin\Debug\DAL1.pdb
+D:\ITSTEP\MyProject_TestCreate\TestServer\bin\Debug\DAL1.dll.config
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\bin\Debug\TestServer.exe.config
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\bin\Debug\TestServer.exe
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\bin\Debug\TestServer.pdb
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\bin\Debug\DAL1.dll
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\bin\Debug\EntityFramework.dll
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\bin\Debug\EntityFramework.SqlServer.dll
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\bin\Debug\LibraryClass.dll
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\bin\Debug\Repository.dll
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\bin\Debug\DAL1.pdb
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\bin\Debug\DAL1.dll.config
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\bin\Debug\LibraryClass.pdb
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\bin\Debug\Repository.pdb
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\bin\Debug\Repository.dll.config
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\bin\Debug\EntityFramework.xml
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\bin\Debug\EntityFramework.SqlServer.xml
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\obj\Debug\TestServer.csproj.AssemblyReference.cache
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\obj\Debug\TestServer.Form1.resources
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\obj\Debug\TestServer.Form2.resources
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\obj\Debug\TestServer.Properties.Resources.resources
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\obj\Debug\TestServer.csproj.GenerateResource.cache
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\obj\Debug\TestServer.csproj.CoreCompileInputs.cache
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\obj\Debug\TestServer.csproj.CopyComplete
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\obj\Debug\TestServer.exe
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestServer\obj\Debug\TestServer.pdb

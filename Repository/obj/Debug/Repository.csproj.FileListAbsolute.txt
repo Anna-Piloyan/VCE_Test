@@ -1,0 +1,11 @@
+D:\ITSTEP\MyProject_TestCreate\Repository\bin\Debug\Repository.dll.config
+D:\ITSTEP\MyProject_TestCreate\Repository\bin\Debug\Repository.dll
+D:\ITSTEP\MyProject_TestCreate\Repository\bin\Debug\Repository.pdb
+D:\ITSTEP\MyProject_TestCreate\Repository\bin\Debug\EntityFramework.dll
+D:\ITSTEP\MyProject_TestCreate\Repository\bin\Debug\EntityFramework.SqlServer.dll
+D:\ITSTEP\MyProject_TestCreate\Repository\bin\Debug\EntityFramework.xml
+D:\ITSTEP\MyProject_TestCreate\Repository\bin\Debug\EntityFramework.SqlServer.xml
+D:\ITSTEP\MyProject_TestCreate\Repository\obj\Debug\Repository.csproj.CoreCompileInputs.cache
+D:\ITSTEP\MyProject_TestCreate\Repository\obj\Debug\Repository.csproj.CopyComplete
+D:\ITSTEP\MyProject_TestCreate\Repository\obj\Debug\Repository.dll
+D:\ITSTEP\MyProject_TestCreate\Repository\obj\Debug\Repository.pdb

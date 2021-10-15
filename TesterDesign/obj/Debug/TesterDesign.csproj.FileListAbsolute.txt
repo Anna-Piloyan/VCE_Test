@@ -1,0 +1,30 @@
+D:\ITSTEP\MyProject_TestCreate\TesterDesign\bin\Debug\TesterDesign.exe.config
+D:\ITSTEP\MyProject_TestCreate\TesterDesign\bin\Debug\TesterDesign.exe
+D:\ITSTEP\MyProject_TestCreate\TesterDesign\bin\Debug\TesterDesign.pdb
+D:\ITSTEP\MyProject_TestCreate\TesterDesign\obj\Debug\TesterDesign.csproj.AssemblyReference.cache
+D:\ITSTEP\MyProject_TestCreate\TesterDesign\obj\Debug\TesterDesign.Form1.resources
+D:\ITSTEP\MyProject_TestCreate\TesterDesign\obj\Debug\TesterDesign.Properties.Resources.resources
+D:\ITSTEP\MyProject_TestCreate\TesterDesign\obj\Debug\TesterDesign.csproj.GenerateResource.cache
+D:\ITSTEP\MyProject_TestCreate\TesterDesign\obj\Debug\TesterDesign.csproj.CoreCompileInputs.cache
+D:\ITSTEP\MyProject_TestCreate\TesterDesign\obj\Debug\TesterDesign.exe
+D:\ITSTEP\MyProject_TestCreate\TesterDesign\obj\Debug\TesterDesign.pdb
+D:\ITSTEP\MyProject_TestCreate\TesterDesign\bin\Debug\LibraryClass.dll
+D:\ITSTEP\MyProject_TestCreate\TesterDesign\bin\Debug\LibraryClass.pdb
+D:\ITSTEP\MyProject_TestCreate\TesterDesign\obj\Debug\TesterDesign.Form2.resources
+D:\ITSTEP\MyProject_TestCreate\TesterDesign\obj\Debug\TesterDesign.Form3.resources
+D:\ITSTEP\MyProject_TestCreate\TesterDesign\obj\Debug\TesterDesign.csproj.CopyComplete
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TesterDesign\bin\Debug\TesterDesign.exe.config
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TesterDesign\bin\Debug\TesterDesign.exe
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TesterDesign\bin\Debug\TesterDesign.pdb
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TesterDesign\bin\Debug\LibraryClass.dll
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TesterDesign\bin\Debug\LibraryClass.pdb
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TesterDesign\obj\Debug\TesterDesign.csproj.AssemblyReference.cache
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TesterDesign\obj\Debug\TesterDesign.Form1.resources
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TesterDesign\obj\Debug\TesterDesign.Form2.resources
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TesterDesign\obj\Debug\TesterDesign.Form3.resources
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TesterDesign\obj\Debug\TesterDesign.Properties.Resources.resources
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TesterDesign\obj\Debug\TesterDesign.csproj.GenerateResource.cache
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TesterDesign\obj\Debug\TesterDesign.csproj.CoreCompileInputs.cache
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TesterDesign\obj\Debug\TesterDesign.csproj.CopyComplete
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TesterDesign\obj\Debug\TesterDesign.exe
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TesterDesign\obj\Debug\TesterDesign.pdb

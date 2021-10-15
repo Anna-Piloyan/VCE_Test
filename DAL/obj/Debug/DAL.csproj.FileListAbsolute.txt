@@ -1,0 +1,13 @@
+D:\ITSTEP\MyProject_TestCreate\DAL\bin\Debug\DAL.dll.config
+D:\ITSTEP\MyProject_TestCreate\DAL\bin\Debug\DAL.dll
+D:\ITSTEP\MyProject_TestCreate\DAL\bin\Debug\DAL.pdb
+D:\ITSTEP\MyProject_TestCreate\DAL\bin\Debug\EntityFramework.dll
+D:\ITSTEP\MyProject_TestCreate\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\ITSTEP\MyProject_TestCreate\DAL\bin\Debug\System.ComponentModel.Annotations.dll
+D:\ITSTEP\MyProject_TestCreate\DAL\bin\Debug\EntityFramework.xml
+D:\ITSTEP\MyProject_TestCreate\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\ITSTEP\MyProject_TestCreate\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\ITSTEP\MyProject_TestCreate\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\ITSTEP\MyProject_TestCreate\DAL\obj\Debug\DAL.dll
+D:\ITSTEP\MyProject_TestCreate\DAL\obj\Debug\DAL.pdb
+D:\ITSTEP\MyProject_TestCreate\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
