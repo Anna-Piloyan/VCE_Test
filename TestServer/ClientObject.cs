@@ -46,7 +46,7 @@ namespace TestServer
             try
             {
                 stream = client.GetStream();
-                byte[] data = new byte[1024]; // буфер для получаемых данных
+                byte[] data = new byte[2048]; // буфер для получаемых данных
                 while (true)
                 {
                     MessageBox.Show("Подключен клиент. Выполнение запроса...");
@@ -111,18 +111,18 @@ namespace TestServer
                     {
                         string testToPass = log_pass[1];
                         // LibraryClass.Test test;
-                        string name = testToPass.TakeWhile(x => x.ToString() == ".").Select(y => y).ToString();
-                        MessageBox.Show($"I'm in pass test button {name}!");
+                       
+                        MessageBox.Show($"I'm in pass test button { testToPass}!");
                         try
                         {
-                            var testF = rTests.FirstOrDefault(g => g.Title == name);
+                            var testF = rTests.FirstOrDefault(g => g.Title == testToPass);
                             MessageBox.Show("Trying to send xmlFile!");
                             if (testF == null)
                                 throw new ArgumentNullException();
                             else
                             {
-                                string path = @"TestFolder\";
-                                FileStream fs = new FileStream(path + testToPass, FileMode.Open);
+                                string path = @"..\..\bin\Debug\TestFolder\";
+                                FileStream fs = new FileStream(path + testToPass + ".xml", FileMode.Open);
                                 BinaryFormatter bFormat = new BinaryFormatter();
                                 byte[] buffer = null;
                                 using (MemoryStream memory = new MemoryStream())

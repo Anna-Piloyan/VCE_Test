@@ -17,8 +17,8 @@ namespace TestClient
     public partial class Form2 : Form
     {
 
-        // NetworkStream streamForm2;
-        TcpClient clientForm2; 
+        //NetworkStream streamForm2;
+        //TcpClient clientForm2; 
        
         const int port = 8888;
         const string address = "127.0.0.1";
@@ -31,8 +31,8 @@ namespace TestClient
         {
             InitializeComponent();
             FillFormWithUserData(message);
-            clientForm2 = new TcpClient(address, port);
-            // streamForm2 = stream;
+            //clientForm2 = client;
+            //streamForm2 = stream;
 
         }
 
@@ -51,21 +51,22 @@ namespace TestClient
         {
             bf = new BinaryFormatter();
             NetworkStream streamForm3 = null;
-            //TcpClient clientForm3 = null;
+            TcpClient clientForm3 = null;
             Test test = new Test();
             try
             {
 
-               // TcpClient clientForm3 = new TcpClient(address, port);
-                streamForm3 = clientForm2.GetStream();
+                clientForm3 = new TcpClient(address, port);
+                streamForm3 = clientForm3.GetStream();
 
                 while (true)
                 {
 
                     // ввод сообщения
                     string passTest = "PassTest";
-                    string testName = "Divide.xml"; // (string)dataGridView1.SelectedRows[0].Cells[2].Value;
+                    string testName = "Divide"; // (string)dataGridView1.SelectedRows[0].Cells[2].Value;
                     string message = String.Format("{0} {1}", passTest, testName);
+                    MessageBox.Show($"Pass Test button {message}");
                     // преобразуем сообщение в массив байтов
                     byte[] data1 = Encoding.Unicode.GetBytes(message);
                     // отправка сообщения
@@ -99,8 +100,8 @@ namespace TestClient
             {
                 if (streamForm3 != null)
                     streamForm3.Close();
-                if (clientForm2 != null)
-                    clientForm2.Close();
+                if (clientForm3 != null)
+                    clientForm3.Close();
             }
            
         }
