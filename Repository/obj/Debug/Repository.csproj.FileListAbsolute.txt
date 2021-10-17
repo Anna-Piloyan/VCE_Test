@@ -9,3 +9,14 @@ D:\ITSTEP\MyProject_TestCreate\Repository\obj\Debug\Repository.csproj.CoreCompil
 D:\ITSTEP\MyProject_TestCreate\Repository\obj\Debug\Repository.csproj.CopyComplete
 D:\ITSTEP\MyProject_TestCreate\Repository\obj\Debug\Repository.dll
 D:\ITSTEP\MyProject_TestCreate\Repository\obj\Debug\Repository.pdb
+D:\Анна\ITStep Программирование\MyProject_TestCreate\Repository\bin\Debug\Repository.dll.config
+D:\Анна\ITStep Программирование\MyProject_TestCreate\Repository\bin\Debug\Repository.dll
+D:\Анна\ITStep Программирование\MyProject_TestCreate\Repository\bin\Debug\Repository.pdb
+D:\Анна\ITStep Программирование\MyProject_TestCreate\Repository\bin\Debug\EntityFramework.dll
+D:\Анна\ITStep Программирование\MyProject_TestCreate\Repository\bin\Debug\EntityFramework.SqlServer.dll
+D:\Анна\ITStep Программирование\MyProject_TestCreate\Repository\bin\Debug\EntityFramework.xml
+D:\Анна\ITStep Программирование\MyProject_TestCreate\Repository\bin\Debug\EntityFramework.SqlServer.xml
+D:\Анна\ITStep Программирование\MyProject_TestCreate\Repository\obj\Debug\Repository.csproj.CoreCompileInputs.cache
+D:\Анна\ITStep Программирование\MyProject_TestCreate\Repository\obj\Debug\Repository.csproj.CopyComplete
+D:\Анна\ITStep Программирование\MyProject_TestCreate\Repository\obj\Debug\Repository.dll
+D:\Анна\ITStep Программирование\MyProject_TestCreate\Repository\obj\Debug\Repository.pdb

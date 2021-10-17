@@ -1,0 +1,11 @@
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestClient\bin\Debug\TestClient.exe.config
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestClient\bin\Debug\TestClient.exe
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestClient\bin\Debug\TestClient.pdb
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestClient\obj\Debug\TestClient.Form1.resources
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestClient\obj\Debug\TestClient.Properties.Resources.resources
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestClient\obj\Debug\TestClient.csproj.GenerateResource.cache
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestClient\obj\Debug\TestClient.csproj.CoreCompileInputs.cache
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestClient\obj\Debug\TestClient.exe
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestClient\obj\Debug\TestClient.pdb
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestClient\obj\Debug\TestClient.Form2.resources
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestClient\obj\Debug\TestClient.Form3.resources

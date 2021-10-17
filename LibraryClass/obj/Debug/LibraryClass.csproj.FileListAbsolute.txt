@@ -5,7 +5,6 @@ D:\ITSTEP\MyProject_TestCreate\LibraryClass\obj\Debug\LibraryClass.dll
 D:\ITSTEP\MyProject_TestCreate\LibraryClass\obj\Debug\LibraryClass.pdb
 D:\Анна\ITStep Программирование\MyProject_TestCreate\LibraryClass\bin\Debug\LibraryClass.dll
 D:\Анна\ITStep Программирование\MyProject_TestCreate\LibraryClass\bin\Debug\LibraryClass.pdb
-D:\Анна\ITStep Программирование\MyProject_TestCreate\LibraryClass\obj\Debug\LibraryClass.csproj.AssemblyReference.cache
 D:\Анна\ITStep Программирование\MyProject_TestCreate\LibraryClass\obj\Debug\LibraryClass.csproj.CoreCompileInputs.cache
 D:\Анна\ITStep Программирование\MyProject_TestCreate\LibraryClass\obj\Debug\LibraryClass.dll
 D:\Анна\ITStep Программирование\MyProject_TestCreate\LibraryClass\obj\Debug\LibraryClass.pdb

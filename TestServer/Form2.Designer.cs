@@ -101,7 +101,7 @@ namespace TestServer
             this.button4.Dock = System.Windows.Forms.DockStyle.Top;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button4.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.button4.Location = new System.Drawing.Point(0, 270);
+            this.button4.Location = new System.Drawing.Point(0, 157);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(11, 0, 8, 0);
@@ -125,7 +125,7 @@ namespace TestServer
             this.panel5.MaximumSize = new System.Drawing.Size(150, 156);
             this.panel5.MinimumSize = new System.Drawing.Size(150, 41);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(150, 156);
+            this.panel5.Size = new System.Drawing.Size(150, 43);
             this.panel5.TabIndex = 1;
             // 
             // button11
@@ -645,6 +645,7 @@ namespace TestServer
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form2";
             this.Text = "Server";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

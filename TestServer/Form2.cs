@@ -15,6 +15,10 @@ using DAL1.Model;
 using System.Data.Entity;
 using System.Configuration;
 using DAL1;
+using System.Net;
+using System.Net.Sockets;
+using System.Threading;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace TestServer
 {
@@ -27,15 +31,72 @@ namespace TestServer
         IGenericRepository<TestGroup> rTestGroups;
         private bool isCollapsed;
         string str = "";
-        public Form2()
+        TcpClient client;
+
+        const int port = 8888;
+       
+        private Thread adminThread;
+
+      
+
+
+        public Form2() 
         {
+            // this.socket = socket;
+
             InitializeComponent();
             UnvisibleControls();
             rUsers = work.Repository<User>();
             rGroups = work.Repository<Group>();
             rTests = work.Repository<DAL1.Model.Test>();
             rTestGroups = work.Repository<TestGroup>();
+            adminThread = new Thread(new ThreadStart(Listener));
+            adminThread.IsBackground = true;
+            adminThread.Start();
+            
         }
+
+        private void Listener()
+        {
+            TcpListener listener = null;
+            try
+            {
+                listener = new TcpListener(IPAddress.Parse("127.0.0.1"), port);
+                listener.Start();
+                MessageBox.Show("Ожидание подключений...");
+
+                while (true)
+                {
+                    client = listener.AcceptTcpClient();
+                   
+                    ClientObject clientObject = new ClientObject(client, rUsers, rGroups);
+                    clientObject.Process();
+
+
+                     // создаем новый поток для обслуживания нового клиента
+                    Thread clientThread = new Thread(new ThreadStart(clientObject.Process));
+                    clientThread.Start();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (listener != null)
+                    listener.Stop();
+               
+
+            }
+          
+        }
+     
+
+
+
+
+
 
         private void UnvisibleControls()
         {           
@@ -381,7 +442,6 @@ namespace TestServer
         {
             if (button12.Text == "Add Group")
             {
-                IGenericRepository<Group> rGroups = work.Repository<Group>();
                 if (textBox1.Text != null)
                 {
                     rGroups.Add(new Group() { GroupName = textBox1.Text });
@@ -537,7 +597,7 @@ namespace TestServer
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            if (button12.Text == "Update" || button12.Text == "Show Users" 
+            if (button12.Text == "Update" || button12.Text == "Show Users"
                 || button12.Text == "Show" || button12.Text == "Show Tests" || button12.Text == "Asign Test")
             {
                 if (dataGridView1.SelectedRows.Count > 0)
@@ -545,6 +605,8 @@ namespace TestServer
                     textBox1.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
                 }
             }
+            else
+                textBox1.Text = "";
             if (button12.Text == "User Update")
             {
                 if (dataGridView1.SelectedRows.Count > 0)
@@ -589,8 +651,15 @@ namespace TestServer
                 };               
                 rTestGroups.Add(rrr);
                 work.SaveChanges();
-                dataGridView1.DataSource = rTestGroups.GetAll().Where(x => x.GroupId == g.Id).Select(x => x.Tests).ToList();
+                dataGridView1.DataSource = rTestGroups.GetAll().Where(x => x.GroupId == g.Id).Select(x => x.Tests).ToList();  // добавить имя группы
             }
+        }
+
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+
+
         }
     }    
 }
