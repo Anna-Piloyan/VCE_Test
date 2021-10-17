@@ -25,25 +25,22 @@ namespace TestServer
     public partial class Form2 : Form
     {
         GenericUnitOfWork work = new GenericUnitOfWork(new MyDbContext(ConfigurationManager.ConnectionStrings["conStr"].ConnectionString));
+
         IGenericRepository<User> rUsers;
         IGenericRepository<Group> rGroups;
         IGenericRepository<DAL1.Model.Test> rTests;
         IGenericRepository<TestGroup> rTestGroups;
+
+       // static List<Client> ListOfClients = new List<Client>();//хто буде проходити тести
+
         private bool isCollapsed;
         string str = "";
         TcpClient client;
-
-        const int port = 8888;
-       
+        const int port = 8888;      
         private Thread adminThread;
-
-      
-
 
         public Form2() 
         {
-            // this.socket = socket;
-
             InitializeComponent();
             UnvisibleControls();
             rUsers = work.Repository<User>();
@@ -52,8 +49,7 @@ namespace TestServer
             rTestGroups = work.Repository<TestGroup>();
             adminThread = new Thread(new ThreadStart(Listener));
             adminThread.IsBackground = true;
-            adminThread.Start();
-            
+            adminThread.Start();           
         }
 
         private void Listener()
@@ -64,16 +60,11 @@ namespace TestServer
                 listener = new TcpListener(IPAddress.Parse("127.0.0.1"), port);
                 listener.Start();
                 MessageBox.Show("Ожидание подключений...");
-
                 while (true)
                 {
-                    client = listener.AcceptTcpClient();
-                   
-                    ClientObject clientObject = new ClientObject(client, rUsers, rGroups);
-                    clientObject.Process();
-
-
-                     // создаем новый поток для обслуживания нового клиента
+                    client = listener.AcceptTcpClient();                  
+                    ClientObject clientObject = new ClientObject(client, rUsers, rGroups, rTests, rTestGroups);
+                    // создаем новый поток для обслуживания нового клиента
                     Thread clientThread = new Thread(new ThreadStart(clientObject.Process));
                     clientThread.Start();
                 }
@@ -86,18 +77,16 @@ namespace TestServer
             {
                 if (listener != null)
                     listener.Stop();
-               
-
             }
           
         }
-     
 
 
 
 
 
 
+        
         private void UnvisibleControls()
         {           
             label2.Visible = false;
@@ -657,8 +646,13 @@ namespace TestServer
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
 
+            work.Dispose();
+          //  adminThread.Close();
+            //foreach (var item in ListOfClients)
+            //{
+            //    item.Dispose();
+            //}
 
         }
     }    

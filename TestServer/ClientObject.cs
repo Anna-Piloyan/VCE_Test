@@ -27,19 +27,21 @@ namespace TestServer
         public TcpClient client;
         IGenericRepository<User> rUsers;
         IGenericRepository<Group> rGroups;
-        //IGenericRepository<DAL1.Model.Test> rTests;
-        //IGenericRepository<TestGroup> rTestGroups;
-        public ClientObject(TcpClient tcpClient, IGenericRepository<User> rUsers, IGenericRepository<Group> rGroups) //, IGenericRepository<User> rUsers)
+        IGenericRepository<DAL1.Model.Test> rTests;
+        IGenericRepository<TestGroup> rTestGroups;
+        public ClientObject(TcpClient tcpClient, IGenericRepository<User> rUsers, IGenericRepository<Group> rGroups,
+            IGenericRepository<DAL1.Model.Test> rTests, IGenericRepository<TestGroup> rTestGroups) //, IGenericRepository<User> rUsers)
         {
             client = tcpClient;
             this.rUsers = rUsers;
             this.rGroups = rGroups;
-            //rTests = work.Repository<DAL1.Model.Test>();
-            //rTestGroups = work.Repository<TestGroup>();
+            this.rTests = rTests;
+            this.rTestGroups = rTestGroups;
         }
        
         public void Process()
         {
+           
             NetworkStream stream = null;
             try
             {
@@ -59,29 +61,102 @@ namespace TestServer
                     while (stream.DataAvailable);
 
                     string message = builder.ToString();
-                    //  System.Windows.Forms.MessageBox.Show($"Server receive: {message}");
-
-
-                    // my code
-                  //  string msg = "";
                     string[] log_pass = message.Split(' ');
-                    string l = log_pass[0];
-                    string p = log_pass[1];
-                    User user = rUsers.FirstOrDefault(x => x.Login == l && x.Password == p);
-                    var groups = rGroups.GetAll().Where(u => u.Users.Contains(user)).Select(g => g.GroupName);
-                   // foreach (var item in groups)
-                      //  string.Join(",", groups);
-                    string m = String.Format("{0} {1},{2}", user.FirstName, user.LastName, string.Join(",", groups));
-                  //  System.Windows.Forms.MessageBox.Show($"Server send: {m}");
 
-                    data = Encoding.Unicode.GetBytes(m);
-                    stream.Write(data, 0, data.Length);
+                    if (log_pass[0] == "LoadTest")
+                    {
+                        DataTable dt = new DataTable();
+                        dt.Columns.Add("Id", typeof(Int32));
+                        dt.Columns.Add("Author", typeof(string));
+                        dt.Columns.Add("TestName", typeof(string));
+                        dt.Columns.Add("QuestionCount", typeof(Int32));
+
+                       
+                        string nameG = log_pass[1];
+                        int grId = rGroups.FirstOrDefault(g => g.GroupName == nameG).Id;
+                         try
+                          {
+
+                        var testGroupData = rTestGroups.GetAll().Where(g => g.GroupId == grId);
+                            if (testGroupData == null)
+                                throw new ArgumentNullException();
+                        foreach (var it in testGroupData)
+                            {
+                                var item = rTests.GetAll().Where(t => t.Id == it.TestId);
+                          
+                           foreach(var i in item)
+                                dt.Rows.Add(i.Id, i.Author, i.Title, i.QtyOfQuestions);
+                            }
+                        }
+                        catch(ArgumentNullException)
+                        {
+                            MessageBox.Show("No tests is added to this group");
+
+                        }
+                        DataSet ds = new DataSet();
+                        ds.Tables.Add(dt);
+                        BinaryFormatter bFormat = new BinaryFormatter();
+                        byte[] buffer = null;
+                       
+                        using (MemoryStream memory = new MemoryStream())
+                        {
+                            bFormat.Serialize(memory, ds);
+                            buffer = memory.ToArray();
+                        }
+                     
+                        stream.Write(buffer, 0, buffer.Length);
+                      
+                    }
+                    else if (log_pass[0] == "PassTest")
+                    {
+                        string testToPass = log_pass[1];
+                        // LibraryClass.Test test;
+                        string name = testToPass.TakeWhile(x => x.ToString() == ".").Select(y => y).ToString();
+                        MessageBox.Show($"I'm in pass test button {name}!");
+                        try
+                        {
+                            var testF = rTests.FirstOrDefault(g => g.Title == name);
+                            MessageBox.Show("Trying to send xmlFile!");
+                            if (testF == null)
+                                throw new ArgumentNullException();
+                            else
+                            {
+                                string path = @"TestFolder\";
+                                FileStream fs = new FileStream(path + testToPass, FileMode.Open);
+                                BinaryFormatter bFormat = new BinaryFormatter();
+                                byte[] buffer = null;
+                                using (MemoryStream memory = new MemoryStream())
+                                {
+                                    bFormat.Serialize(memory, fs);
+                                    buffer = memory.ToArray();
+                                }
+                                stream.Write(buffer, 0, buffer.Length);
+                                MessageBox.Show("Server: I send XML!");
+                            }
+                        }
+                        catch (ArgumentNullException)
+                        {
+                            MessageBox.Show("This test is not exists!");
+
+                        }
+                       
+                       
+                     
+                      
+                       
+                    }
+                    else
+                    {
+                        //  System.Windows.Forms.MessageBox.Show($"Server receive: {message}");
+                        string messageOut = LoginDataConnect(message);
+                        // System.Windows.Forms.MessageBox.Show($"Server send: {messageOut}");
+                        data = Encoding.Unicode.GetBytes(messageOut);
+                        stream.Write(data, 0, data.Length);
+                    }
                 }
             }
             catch (Exception ex)
             {
-
-
                 MessageBox.Show(ex.Message);
             }
             finally
@@ -90,7 +165,19 @@ namespace TestServer
                     stream.Close();
                 if (client != null)
                     client.Close();
+               
             }
+        }
+
+        private string LoginDataConnect(string msg)
+        {
+            string[] log_pass = msg.Split(' ');
+            string l = log_pass[0];
+            string p = log_pass[1];
+            User user = rUsers.FirstOrDefault(x => x.Login == l && x.Password == p);
+            var groups = rGroups.GetAll().Where(u => u.Users.Contains(user)).Select(g => g.GroupName);
+            string m = String.Format("{0} {1},{2}", user.FirstName, user.LastName, string.Join(",", groups));
+            return m;
         }
 
         //private byte[] GetByteDataSet(DataSet data)

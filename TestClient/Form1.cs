@@ -47,7 +47,7 @@ namespace TestClient
                     byte[] data = Encoding.Unicode.GetBytes(message);
                     // отправка сообщения
                     stream.Write(data, 0, data.Length);
-                    MessageBox.Show($" Client To Server:{message}");
+                   // MessageBox.Show($" Client To Server:{message}");
                     // получаем ответ
                     data = new byte[1024]; // буфер для получаемых данных
                     StringBuilder builder = new StringBuilder();
@@ -60,11 +60,11 @@ namespace TestClient
                     while (stream.DataAvailable);
                    
                     message = builder.ToString();
-                    MessageBox.Show($" Client From Server:{message}");
+                  //  MessageBox.Show($" Client From Server:{message}");
                    
                     if (message != "")
                     {
-                        Form2 form2 = new Form2(message, client, stream);
+                        Form2 form2 = new Form2(message);
                         form2.ShowDialog();
                     }
                    

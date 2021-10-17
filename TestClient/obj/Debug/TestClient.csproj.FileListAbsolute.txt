@@ -9,3 +9,7 @@ D:\Анна\ITStep Программирование\MyProject_TestCreate\TestCli
 D:\Анна\ITStep Программирование\MyProject_TestCreate\TestClient\obj\Debug\TestClient.pdb
 D:\Анна\ITStep Программирование\MyProject_TestCreate\TestClient\obj\Debug\TestClient.Form2.resources
 D:\Анна\ITStep Программирование\MyProject_TestCreate\TestClient\obj\Debug\TestClient.Form3.resources
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestClient\bin\Debug\LibraryClass.dll
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestClient\bin\Debug\LibraryClass.pdb
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestClient\obj\Debug\TestClient.csproj.AssemblyReference.cache
+D:\Анна\ITStep Программирование\MyProject_TestCreate\TestClient\obj\Debug\TestClient.csproj.CopyComplete
