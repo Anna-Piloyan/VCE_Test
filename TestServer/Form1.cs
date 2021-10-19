@@ -40,7 +40,7 @@ namespace TestServer
             {
                 MessageBox.Show("Login or password is wrong!");
             }
-            this.Close();
+           // this.Close();
         }
        
 

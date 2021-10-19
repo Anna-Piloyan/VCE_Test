@@ -25,7 +25,7 @@ namespace TestServer
     public partial class Form2 : Form
     {
         GenericUnitOfWork work = new GenericUnitOfWork(new MyDbContext(ConfigurationManager.ConnectionStrings["conStr"].ConnectionString));
-
+        TcpListener listener = null;
         IGenericRepository<User> rUsers;
         IGenericRepository<Group> rGroups;
         IGenericRepository<DAL1.Model.Test> rTests;
@@ -54,16 +54,16 @@ namespace TestServer
 
         private void Listener()
         {
-            TcpListener listener = null;
+           
             try
             {
                 listener = new TcpListener(IPAddress.Parse("127.0.0.1"), port);
                 listener.Start();
-                MessageBox.Show("Ожидание подключений...");
+               
                 while (true)
                 {
                     client = listener.AcceptTcpClient();                  
-                    ClientObject clientObject = new ClientObject(client, rUsers, rGroups, rTests, rTestGroups);
+                    ClientObject clientObject = new ClientObject(client, listener, rUsers, rGroups, rTests, rTestGroups);
                     // создаем новый поток для обслуживания нового клиента
                     Thread clientThread = new Thread(new ThreadStart(clientObject.Process));
                     clientThread.Start();
@@ -71,12 +71,14 @@ namespace TestServer
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Server form2 Exception");
                 MessageBox.Show(ex.Message);
+
             }
             finally
             {
-                if (listener != null)
-                    listener.Stop();
+               // if (listener != null)
+                 //   listener.Stop();
             }
           
         }

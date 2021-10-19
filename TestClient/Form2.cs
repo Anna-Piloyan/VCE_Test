@@ -17,9 +17,10 @@ namespace TestClient
     public partial class Form2 : Form
     {
 
-        //NetworkStream streamForm2;
-        //TcpClient clientForm2; 
+        NetworkStream streamForm2;
+        TcpClient clientForm2;
        
+
         const int port = 8888;
         const string address = "127.0.0.1";
 
@@ -27,12 +28,12 @@ namespace TestClient
         {
             InitializeComponent();
         }
-        public Form2(string message) //, TcpClient client, NetworkStream stream)
+        public Form2(string message, TcpClient client, NetworkStream stream)
         {
             InitializeComponent();
             FillFormWithUserData(message);
-            //clientForm2 = client;
-            //streamForm2 = stream;
+            clientForm2 = client;
+            streamForm2 = stream;
 
         }
 
@@ -46,18 +47,18 @@ namespace TestClient
             }
             label1.Text = n_s;
         }
-        BinaryFormatter bf;
+        
         private void PassTest_Click(object sender, EventArgs e)
         {
-            bf = new BinaryFormatter();
-            NetworkStream streamForm3 = null;
-            TcpClient clientForm3 = null;
+            BinaryFormatter bf = new BinaryFormatter();
             Test test = new Test();
+           // TcpClient clientForm2 = null;
+           // NetworkStream streamForm2 = null;
             try
             {
 
-                clientForm3 = new TcpClient(address, port);
-                streamForm3 = clientForm3.GetStream();
+                clientForm2 = new TcpClient(address, port);
+                streamForm2 = clientForm2.GetStream();
 
                 while (true)
                 {
@@ -70,15 +71,15 @@ namespace TestClient
                     // преобразуем сообщение в массив байтов
                     byte[] data1 = Encoding.Unicode.GetBytes(message);
                     // отправка сообщения
-                    streamForm3.Write(data1, 0, data1.Length);
+                    streamForm2.Write(data1, 0, data1.Length);
                     MessageBox.Show($" Client Pass Test:{message}");
                     // получаем ответ
-                    // ds = null;
+                   
                     byte[] buffer = new byte[16384];
                     using (MemoryStream memory = new MemoryStream(buffer))
                     {
                        
-                        test = (Test)bf.Deserialize(streamForm3);
+                        test = (Test)bf.Deserialize(streamForm2);
                         MessageBox.Show("XML Buffer");
 
                     }
@@ -89,90 +90,89 @@ namespace TestClient
                         form3.ShowDialog();
                       
                     }
-
+                   // streamForm2.Close();
+                   // clientForm2.Close();
                 }
-        }
-            catch (Exception ex)
+               
+            }
+            catch (ArgumentNullException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("ArgumentNullException: {0}", ex.Message);
+            }
+            catch (SocketException ex)
+            {
+                MessageBox.Show("SocketException TestClient Form2 PassTest: {0}", ex.Message);
             }
             finally
             {
-                if (streamForm3 != null)
-                    streamForm3.Close();
-                if (clientForm3 != null)
-                    clientForm3.Close();
+                if (streamForm2 != null)
+                    streamForm2.Close();
+                if (clientForm2 != null)
+                    clientForm2.Close();
             }
-           
+
         }
        
         private void LoadTest_Click(object sender, EventArgs e)
         {
-         //   bf = new BinaryFormatter();
-         //   DataSet ds = new DataSet();
-         //   NetworkStream streamForm2 = null;
-         ////   TcpClient clientForm2 = null;
-         //   try
-         //     {
+            BinaryFormatter bf = new BinaryFormatter();
+            DataSet ds = new DataSet();
+           // TcpClient clientForm2 = null;
+          //  NetworkStream streamForm2 = null;
+            try
+            {
+                clientForm2 = new TcpClient(address, port);
+                streamForm2 = clientForm2.GetStream();
 
-         ////   clientForm2 = new TcpClient(address, port);
-         //       streamForm2 = clientForm2.GetStream();
+                while (true)
+                {
 
-         //   while (true)
-         //       {
+                    // ввод сообщения
+                    string loadTest = "LoadTest";
+                    string group = comboBox1.SelectedItem.ToString();
+                    string message = String.Format("{0} {1}", loadTest, group);
+                    // преобразуем сообщение в массив байтов
+                    byte[] data1 = Encoding.Unicode.GetBytes(message);
+                    // отправка сообщения
+                    streamForm2.Write(data1, 0, data1.Length);
+                    MessageBox.Show($" Client Form2:{message}");
+                    // получаем ответ
+                    // ds = null;
+                    byte[] buffer = new byte[16384];
+                  //  using (MemoryStream memory = new MemoryStream(buffer))
+                  //  {
 
-         //           // ввод сообщения
-         //           string loadTest = "LoadTest";
-         //           string group = comboBox1.SelectedItem.ToString();
-         //           string message = String.Format("{0} {1}", loadTest, group);
-         //           // преобразуем сообщение в массив байтов
-         //           byte[] data1 = Encoding.Unicode.GetBytes(message);
-         //           // отправка сообщения
-         //           streamForm2.Write(data1, 0, data1.Length);
-         //           MessageBox.Show($" Client Form2:{message}");
-         //           // получаем ответ
-         //          // ds = null;
-         //           byte[] buffer = new byte[16384];
-         //           using (MemoryStream memory = new MemoryStream(buffer))
-         //           {
-                                         
-         //               ds = (DataSet)bf.Deserialize(streamForm2);
-         //               MessageBox.Show("MemoryStream Buffer");
-                       
-         //           }
-         //           if (ds != null)
-         //           {
-         //               MessageBox.Show("Table Form2");
-         //               dataGridView1.DataSource = ds.Tables[0]; 
-         //               LoadTest.Enabled = true;
-                       
-         //           }
-                    
-                 
-         //       }
-         //   }
-         //   catch (Exception ex)
-         //   {
-         //       MessageBox.Show(ex.Message);
-         //   }
-         //   finally
-         //   {
-         //       if (streamForm2 != null)
-         //           streamForm2.Close();
-         //       if (clientForm2 != null)
-         //           clientForm2.Close();
+                        ds = (DataSet)bf.Deserialize(streamForm2);
+                        MessageBox.Show("MemoryStream Buffer");
 
-           // }
-           
-            //MemoryStream stream = new MemoryStream();
-            ////и для сериализации
-            //BinaryFormatter bf = new BinaryFormatter();
+                  //  }
+                    if (ds != null)
+                    {
+                        MessageBox.Show("Table Form2");
+                        dataGridView1.DataSource = ds.Tables[0];
+                      
 
-            ////создаем объект DataSet и производим для него десериализацию клиентского потока
-            //DataSet data = (DataSet)bf.Deserialize(streamForm2);
-            ////отобразили таблицу с индексом 0 в клиентском DataGridView
-            ////а т.к. таблица у меня всего одна, то и выбор, соответственно, невелик
-            //dataGridView1.DataSource = data.Tables[0].DefaultView;
+                    }
+                   // streamForm2.Close();
+                    clientForm2.Close();
+
+                }
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show("ArgumentNullException: {0}", ex.Message);
+            }
+            catch (SocketException ex)
+            {
+                MessageBox.Show("SocketException TestClient Form2 LoadTest: {0}", ex.Message);
+            }
+            finally
+            {
+                if (streamForm2 != null)
+                    streamForm2.Close();
+                if (clientForm2 != null)
+                    clientForm2.Close();
+            }
         }
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)

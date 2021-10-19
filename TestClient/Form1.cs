@@ -29,12 +29,12 @@ namespace TestClient
             
         private void button1_Click(object sender, EventArgs e)
         {
-            NetworkStream stream = null;
-            TcpClient client = null;
+           // NetworkStream stream = null;
+            //TcpClient client = null;
             try
             {
-                client = new TcpClient(address, port);
-                stream = client.GetStream();
+                TcpClient client = new TcpClient(address, port);
+                NetworkStream stream = client.GetStream();
 
                 while (true)
                 {
@@ -47,7 +47,7 @@ namespace TestClient
                     byte[] data = Encoding.Unicode.GetBytes(message);
                     // отправка сообщения
                     stream.Write(data, 0, data.Length);
-                   // MessageBox.Show($" Client To Server:{message}");
+                    MessageBox.Show($" Client send To Server:{message}");
                     // получаем ответ
                     data = new byte[1024]; // буфер для получаемых данных
                     StringBuilder builder = new StringBuilder();
@@ -60,28 +60,26 @@ namespace TestClient
                     while (stream.DataAvailable);
                    
                     message = builder.ToString();
-                  //  MessageBox.Show($" Client From Server:{message}");
+                    MessageBox.Show($" Client receive From Server:{message}");
                    
                     if (message != "")
                     {
                         Form2 form2 = new Form2(message);
                         form2.ShowDialog();
                     }
+                    MessageBox.Show($"Client: close!!!");
+                    stream.Close();
+                    client.Close();
                    
-               
-                    MessageBox.Show($"Client2: I reach HERE!!!");
                 }
             }
-            catch (Exception ex)
+            catch (ArgumentNullException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("ArgumentNullException: {0}", ex.Message);
             }
-            finally
+            catch (SocketException ex)
             {
-                if (stream != null)
-                    stream.Close();
-                if (client != null)
-                    client.Close();
+                MessageBox.Show("SocketException TestClient Form1: {0}", ex.Message);
             }
         }
 

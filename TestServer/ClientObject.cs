@@ -25,14 +25,16 @@ namespace TestServer
     public class ClientObject
     {
         public TcpClient client;
+        TcpListener listener;
         IGenericRepository<User> rUsers;
         IGenericRepository<Group> rGroups;
         IGenericRepository<DAL1.Model.Test> rTests;
         IGenericRepository<TestGroup> rTestGroups;
-        public ClientObject(TcpClient tcpClient, IGenericRepository<User> rUsers, IGenericRepository<Group> rGroups,
+        public ClientObject(TcpClient tcpClient, TcpListener tcpListener, IGenericRepository<User> rUsers, IGenericRepository<Group> rGroups,
             IGenericRepository<DAL1.Model.Test> rTests, IGenericRepository<TestGroup> rTestGroups) //, IGenericRepository<User> rUsers)
         {
             client = tcpClient;
+            listener = tcpListener;
             this.rUsers = rUsers;
             this.rGroups = rGroups;
             this.rTests = rTests;
@@ -46,10 +48,11 @@ namespace TestServer
             try
             {
                 stream = client.GetStream();
-                byte[] data = new byte[2048]; // буфер для получаемых данных
+                byte[] data = new byte[2048];
                 while (true)
                 {
-                    MessageBox.Show("Подключен клиент. Выполнение запроса...");
+                    // буфер для получаемых данных
+                   // MessageBox.Show("Подключен клиент. Выполнение запроса...");
                     // получаем сообщение
                     StringBuilder builder = new StringBuilder();
                     int bytes = 0;
@@ -70,42 +73,44 @@ namespace TestServer
                         dt.Columns.Add("Author", typeof(string));
                         dt.Columns.Add("TestName", typeof(string));
                         dt.Columns.Add("QuestionCount", typeof(Int32));
-
-                       
                         string nameG = log_pass[1];
                         int grId = rGroups.FirstOrDefault(g => g.GroupName == nameG).Id;
-                         try
-                          {
+                        try
+                        {
 
-                        var testGroupData = rTestGroups.GetAll().Where(g => g.GroupId == grId);
+                            var testGroupData = rTestGroups.GetAll().Where(g => g.GroupId == grId);
                             if (testGroupData == null)
                                 throw new ArgumentNullException();
-                        foreach (var it in testGroupData)
+                            foreach (var it in testGroupData)
                             {
                                 var item = rTests.GetAll().Where(t => t.Id == it.TestId);
-                          
-                           foreach(var i in item)
-                                dt.Rows.Add(i.Id, i.Author, i.Title, i.QtyOfQuestions);
+
+                                foreach (var i in item)
+                                    dt.Rows.Add(i.Id, i.Author, i.Title, i.QtyOfQuestions);
                             }
+                            
                         }
-                        catch(ArgumentNullException)
+                        catch (ArgumentNullException)
                         {
                             MessageBox.Show("No tests is added to this group");
 
                         }
+
                         DataSet ds = new DataSet();
                         ds.Tables.Add(dt);
                         BinaryFormatter bFormat = new BinaryFormatter();
                         byte[] buffer = null;
-                       
-                        using (MemoryStream memory = new MemoryStream())
-                        {
+                        MemoryStream memory = new MemoryStream();
+                       // using (MemoryStream memory = new MemoryStream())
+                       // {
                             bFormat.Serialize(memory, ds);
                             buffer = memory.ToArray();
-                        }
+                      //  }
                      
                         stream.Write(buffer, 0, buffer.Length);
-                      
+                        MessageBox.Show("Test sended to client!");
+                       
+
                     }
                     else if (log_pass[0] == "PassTest")
                     {
@@ -125,6 +130,7 @@ namespace TestServer
                                 FileStream fs = new FileStream(path + testToPass + ".xml", FileMode.Open);
                                 BinaryFormatter bFormat = new BinaryFormatter();
                                 byte[] buffer = null;
+                               
                                 using (MemoryStream memory = new MemoryStream())
                                 {
                                     bFormat.Serialize(memory, fs);
@@ -133,16 +139,12 @@ namespace TestServer
                                 stream.Write(buffer, 0, buffer.Length);
                                 MessageBox.Show("Server: I send XML!");
                             }
-                        }
+                         }
                         catch (ArgumentNullException)
                         {
                             MessageBox.Show("This test is not exists!");
 
                         }
-                       
-                       
-                     
-                      
                        
                     }
                     else
@@ -153,19 +155,19 @@ namespace TestServer
                         data = Encoding.Unicode.GetBytes(messageOut);
                         stream.Write(data, 0, data.Length);
                     }
+                   // client.Close();
                 }
             }
-            catch (Exception ex)
+            catch (SocketException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("SocketException ClientObject: {0}", ex.Message);
+                
             }
             finally
             {
-                if (stream != null)
-                    stream.Close();
-                if (client != null)
-                    client.Close();
-               
+                // Stop listening for new clients.
+                client.Close();
+               // listener.Stop();
             }
         }
 
