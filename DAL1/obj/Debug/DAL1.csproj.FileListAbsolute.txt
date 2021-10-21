@@ -32,3 +32,4 @@ D:\MyProject_TestCreate\DAL1\obj\Debug\DAL1.csproj.CoreCompileInputs.cache
 D:\MyProject_TestCreate\DAL1\obj\Debug\DAL1.csproj.CopyComplete
 D:\MyProject_TestCreate\DAL1\obj\Debug\DAL1.dll
 D:\MyProject_TestCreate\DAL1\obj\Debug\DAL1.pdb
+D:\Анна\ITStep Программирование\MyProject_TestCreate\DAL1\obj\Debug\DAL1.csproj.AssemblyReference.cache

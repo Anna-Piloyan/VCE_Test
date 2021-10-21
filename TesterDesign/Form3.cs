@@ -31,6 +31,7 @@ namespace TesterDesign
 
         private void TestList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             XmlSerializer formatter = new XmlSerializer(typeof(Test));
             using (FileStream fs = new FileStream(path + listBox3.SelectedItem.ToString(), FileMode.OpenOrCreate))
             {
@@ -129,16 +130,10 @@ namespace TesterDesign
         {
            int count = Convert.ToInt32(test.QuestionCount);
            int index = listBox1.SelectedIndex;
-           if (count > 1)
-           {
-                test.Question.RemoveAt(index);
-                listBox1.Items.RemoveAt(index);
-                textBox5.Text = "";
-                count--;
-           }
-            else
-                MessageBox.Show("You can't remove last Question");
-
+            test.Question.RemoveAt(index);
+            listBox1.Items.RemoveAt(index);
+            textBox5.Text = "";
+            count--;
         }
 
         private void RemoveAnswer_Click(object sender, EventArgs e)

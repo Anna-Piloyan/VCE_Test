@@ -1,43 +1,28 @@
 <?xml version="1.0"?>
 <Test xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Author>DavidAG</Author>
+  <Author>Anna</Author>
   <TestName>Multiply</TestName>
   <QuestionCount>3</QuestionCount>
-  <Difficulty>1</Difficulty>
+  <Difficulty>2</Difficulty>
   <Question>
-    <Description>2*2</Description>
+    <Description>2*3</Description>
     <Answer>
       <Description>5</Description>
       <IsRight>False</IsRight>
     </Answer>
     <Answer>
-      <Description>8</Description>
-      <IsRight>False</IsRight>
+      <Description>6</Description>
+      <IsRight>True</IsRight>
     </Answer>
     <Answer>
-      <Description>4</Description>
-      <IsRight>True</IsRight>
+      <Description>12</Description>
+      <IsRight>False</IsRight>
     </Answer>
   </Question>
   <Question>
-    <Description>6*6</Description>
+    <Description>3*5</Description>
     <Answer>
       <Description>7</Description>
-      <IsRight>False</IsRight>
-    </Answer>
-    <Answer>
-      <Description>36</Description>
-      <IsRight>True</IsRight>
-    </Answer>
-    <Answer>
-      <Description>31</Description>
-      <IsRight>False</IsRight>
-    </Answer>
-  </Question>
-  <Question>
-    <Description>5*5</Description>
-    <Answer>
-      <Description>45</Description>
       <IsRight>False</IsRight>
     </Answer>
     <Answer>
@@ -45,8 +30,23 @@
       <IsRight>False</IsRight>
     </Answer>
     <Answer>
-      <Description>25</Description>
+      <Description>15</Description>
       <IsRight>True</IsRight>
+    </Answer>
+  </Question>
+  <Question>
+    <Description>12*4</Description>
+    <Answer>
+      <Description>45</Description>
+      <IsRight>False</IsRight>
+    </Answer>
+    <Answer>
+      <Description>48</Description>
+      <IsRight>True</IsRight>
+    </Answer>
+    <Answer>
+      <Description>23</Description>
+      <IsRight>False</IsRight>
     </Answer>
   </Question>
 </Test>

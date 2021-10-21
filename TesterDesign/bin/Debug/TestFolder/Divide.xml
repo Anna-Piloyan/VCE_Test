@@ -2,35 +2,50 @@
 <Test xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Author>AnnaAG</Author>
   <TestName>Divide</TestName>
-  <QuestionCount>2</QuestionCount>
-  <Difficulty>1</Difficulty>
+  <QuestionCount>3</QuestionCount>
+  <Difficulty>2</Difficulty>
   <Question>
-    <Description>6/2</Description>
+    <Description>12/3</Description>
     <Answer>
-      <Description>5</Description>
-      <IsRight>False</IsRight>
+      <Description>4</Description>
+      <IsRight>True</IsRight>
     </Answer>
     <Answer>
       <Description>7</Description>
       <IsRight>False</IsRight>
     </Answer>
     <Answer>
-      <Description>3</Description>
-      <IsRight>True</IsRight>
+      <Description>15</Description>
+      <IsRight>False</IsRight>
     </Answer>
   </Question>
   <Question>
-    <Description>8/4</Description>
+    <Description>6/2</Description>
     <Answer>
-      <Description>12</Description>
+      <Description>4</Description>
       <IsRight>False</IsRight>
     </Answer>
     <Answer>
-      <Description>2</Description>
+      <Description>3</Description>
       <IsRight>True</IsRight>
     </Answer>
     <Answer>
+      <Description>8</Description>
+      <IsRight>False</IsRight>
+    </Answer>
+  </Question>
+  <Question>
+    <Description>45/5</Description>
+    <Answer>
+      <Description>7</Description>
+      <IsRight>False</IsRight>
+    </Answer>
+    <Answer>
       <Description>9</Description>
+      <IsRight>True</IsRight>
+    </Answer>
+    <Answer>
+      <Description>4</Description>
       <IsRight>False</IsRight>
     </Answer>
   </Question>

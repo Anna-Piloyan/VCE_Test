@@ -14,3 +14,4 @@ D:\MyProject_TestCreate\LibraryClass\bin\Debug\LibraryClass.pdb
 D:\MyProject_TestCreate\LibraryClass\obj\Debug\LibraryClass.csproj.CoreCompileInputs.cache
 D:\MyProject_TestCreate\LibraryClass\obj\Debug\LibraryClass.dll
 D:\MyProject_TestCreate\LibraryClass\obj\Debug\LibraryClass.pdb
+D:\Анна\ITStep Программирование\MyProject_TestCreate\LibraryClass\obj\Debug\LibraryClass.csproj.AssemblyReference.cache
