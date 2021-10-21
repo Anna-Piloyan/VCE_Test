@@ -13,3 +13,18 @@ D:\Анна\ITStep Программирование\MyProject_TestCreate\TestCli
 D:\Анна\ITStep Программирование\MyProject_TestCreate\TestClient1\obj\Debug\TestClient1.csproj.CopyComplete
 D:\Анна\ITStep Программирование\MyProject_TestCreate\TestClient1\obj\Debug\TestClient1.exe
 D:\Анна\ITStep Программирование\MyProject_TestCreate\TestClient1\obj\Debug\TestClient1.pdb
+D:\MyProject_TestCreate\TestClient1\bin\Debug\TestClient1.exe.config
+D:\MyProject_TestCreate\TestClient1\bin\Debug\TestClient1.exe
+D:\MyProject_TestCreate\TestClient1\bin\Debug\TestClient1.pdb
+D:\MyProject_TestCreate\TestClient1\bin\Debug\LibraryClass.dll
+D:\MyProject_TestCreate\TestClient1\bin\Debug\LibraryClass.pdb
+D:\MyProject_TestCreate\TestClient1\obj\Debug\TestClient1.csproj.AssemblyReference.cache
+D:\MyProject_TestCreate\TestClient1\obj\Debug\TestClient1.Form1.resources
+D:\MyProject_TestCreate\TestClient1\obj\Debug\TestClient1.Form2.resources
+D:\MyProject_TestCreate\TestClient1\obj\Debug\TestClient1.Form3.resources
+D:\MyProject_TestCreate\TestClient1\obj\Debug\TestClient1.Properties.Resources.resources
+D:\MyProject_TestCreate\TestClient1\obj\Debug\TestClient1.csproj.GenerateResource.cache
+D:\MyProject_TestCreate\TestClient1\obj\Debug\TestClient1.csproj.CoreCompileInputs.cache
+D:\MyProject_TestCreate\TestClient1\obj\Debug\TestClient1.csproj.CopyComplete
+D:\MyProject_TestCreate\TestClient1\obj\Debug\TestClient1.exe
+D:\MyProject_TestCreate\TestClient1\obj\Debug\TestClient1.pdb

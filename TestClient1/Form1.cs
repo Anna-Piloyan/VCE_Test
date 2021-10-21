@@ -16,58 +16,47 @@ namespace TestClient1
         const int port = 8888;
         const string address = "127.0.0.1";
         TcpClient client = null;
-
+        NetworkStream stream;
         public Form1()
         {
             InitializeComponent();
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // NetworkStream stream = null;
-            //TcpClient client = null;
             try
             {
                 client = new TcpClient(address, port);
-                NetworkStream stream = client.GetStream();
-
-                while (true)
+                stream = client.GetStream();
+                // ввод сообщения
+                string login = textBox1.Text;
+                string password = maskedTextBox1.Text;
+                string message = String.Format("{0} {1}", login, password);
+                // преобразуем сообщение в массив байтов
+                byte[] data = Encoding.Unicode.GetBytes(message);
+                // отправка сообщения
+                stream.Write(data, 0, data.Length);
+                // получаем ответ
+                data = new byte[2048]; // буфер для получаемых данных
+                StringBuilder builder = new StringBuilder();
+                int bytes = 0;
+                do
                 {
-
-                    // ввод сообщения
-                    string login = textBox1.Text;
-                    string password = maskedTextBox1.Text;
-                    string message = String.Format("{0} {1}", login, password);
-                    // преобразуем сообщение в массив байтов
-                    byte[] data = Encoding.Unicode.GetBytes(message);
-                    // отправка сообщения
-                    stream.Write(data, 0, data.Length);
-                    MessageBox.Show($" Client send To Server:{message}");
-                    // получаем ответ
-                    data = new byte[1024]; // буфер для получаемых данных
-                    StringBuilder builder = new StringBuilder();
-                    int bytes = 0;
-                    do
-                    {
-                        bytes = stream.Read(data, 0, data.Length);
-                        builder.Append(Encoding.Unicode.GetString(data, 0, bytes));
-                    }
-                    while (stream.DataAvailable);
-
-                    message = builder.ToString();
-                    MessageBox.Show($" Client receive From Server:{message}");
-
-                    if (message != "")
-                    {
-                        Form2 form2 = new Form2(message);
-                        form2.ShowDialog();
-                    }
-                    MessageBox.Show($"Client: close!!!");
-                    stream.Close();
-                    client.Close();
-
+                    bytes = stream.Read(data, 0, data.Length);
+                    builder.Append(Encoding.Unicode.GetString(data, 0, bytes));
                 }
+                while (stream.DataAvailable);
+                message = builder.ToString();
+                if (message != "")
+                {
+                    Form2 form2 = new Form2(message, client, stream);
+                    form2.ShowDialog();
+                }
+
+                stream.Close();
+                client.Close();
+
+
             }
             catch (ArgumentNullException ex)
             {
@@ -79,34 +68,15 @@ namespace TestClient1
             }
         }
 
-
-
         private void button2_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
-            // if (stream != null)
-            //     stream.Close();
-            // if (client != null)
-            //   client.Close();
+            this.DialogResult = DialogResult.Cancel;          
+            if (stream != null)
+                stream.Close();
+            if (client != null)
+                client.Close();
+            this.Close();
         }
-
-        //private void connect_to_server_Click(object sender, EventArgs e)
-        //{
-        //    //создаем клиента на подключение к 200 порту по IP-сервера
-        //    TcpClient client = new TcpClient("127.0.0.1", 200);
-        //    //получаем поток для этого клиента. По нему пошел DataSet
-        //    NetworkStream client_streem = client.GetStream();
-        //    //опять врменный буфер
-        //    MemoryStream streem = new MemoryStream();
-        //    //и для сериализации
-        //    BinaryFormatter bf = new BinaryFormatter();
-
-        //    //создаем объект DataSet и производим для него десериализацию клиентского потока
-        //    DataSet data = (DataSet)bf.Deserialize(client_streem);
-        //    //отобразили таблицу с индексом 0 в клиентском DataGridView
-        //    //а т.к. таблица у меня всего одна, то и выбор, соответственно, невелик
-        //  //  dataGridView1.DataSource = data.Tables[0].DefaultView;
-        //}
     }
 }
 

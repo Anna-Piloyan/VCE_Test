@@ -20,3 +20,14 @@ D:\Анна\ITStep Программирование\MyProject_TestCreate\Reposit
 D:\Анна\ITStep Программирование\MyProject_TestCreate\Repository\obj\Debug\Repository.csproj.CopyComplete
 D:\Анна\ITStep Программирование\MyProject_TestCreate\Repository\obj\Debug\Repository.dll
 D:\Анна\ITStep Программирование\MyProject_TestCreate\Repository\obj\Debug\Repository.pdb
+D:\MyProject_TestCreate\Repository\bin\Debug\Repository.dll.config
+D:\MyProject_TestCreate\Repository\bin\Debug\Repository.dll
+D:\MyProject_TestCreate\Repository\bin\Debug\Repository.pdb
+D:\MyProject_TestCreate\Repository\bin\Debug\EntityFramework.dll
+D:\MyProject_TestCreate\Repository\bin\Debug\EntityFramework.SqlServer.dll
+D:\MyProject_TestCreate\Repository\bin\Debug\EntityFramework.xml
+D:\MyProject_TestCreate\Repository\bin\Debug\EntityFramework.SqlServer.xml
+D:\MyProject_TestCreate\Repository\obj\Debug\Repository.csproj.CoreCompileInputs.cache
+D:\MyProject_TestCreate\Repository\obj\Debug\Repository.csproj.CopyComplete
+D:\MyProject_TestCreate\Repository\obj\Debug\Repository.dll
+D:\MyProject_TestCreate\Repository\obj\Debug\Repository.pdb

@@ -19,13 +19,11 @@ using System.Windows.Forms;
 namespace TestServer
 {
     public partial class Form1 : Form
-    {
-      
+    {     
         GenericUnitOfWork work = new GenericUnitOfWork(new MyDbContext("conStr"));
         public Form1()
         {
-            InitializeComponent();
-           
+            InitializeComponent();         
         }
         private void Login_Click(object sender, EventArgs e)
         {
@@ -43,10 +41,10 @@ namespace TestServer
            // this.Close();
         }
        
-
         private void Cancel_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            this.DialogResult = DialogResult.Cancel;         
+            this.Close();          
         }
     }
 }

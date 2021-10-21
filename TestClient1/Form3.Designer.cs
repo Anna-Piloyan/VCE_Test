@@ -39,10 +39,10 @@ namespace TestClient1
             this.Next.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.Next.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Next.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.Next.Location = new System.Drawing.Point(313, 172);
-            this.Next.Margin = new System.Windows.Forms.Padding(4);
+            this.Next.Location = new System.Drawing.Point(417, 212);
+            this.Next.Margin = new System.Windows.Forms.Padding(5);
             this.Next.Name = "Next";
-            this.Next.Size = new System.Drawing.Size(115, 47);
+            this.Next.Size = new System.Drawing.Size(153, 58);
             this.Next.TabIndex = 5;
             this.Next.Text = "Next";
             this.Next.UseVisualStyleBackColor = false;
@@ -52,31 +52,33 @@ namespace TestClient1
             // 
             this.listBox1.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(13, 102);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(17, 126);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(5);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(275, 121);
+            this.listBox1.Size = new System.Drawing.Size(365, 148);
             this.listBox1.TabIndex = 4;
             // 
             // textBox1
             // 
             this.textBox1.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.textBox1.Location = new System.Drawing.Point(13, 13);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Location = new System.Drawing.Point(17, 16);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(5);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(415, 68);
+            this.textBox1.Size = new System.Drawing.Size(552, 83);
             this.textBox1.TabIndex = 3;
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OliveDrab;
-            this.ClientSize = new System.Drawing.Size(446, 253);
+            this.ClientSize = new System.Drawing.Size(595, 311);
             this.Controls.Add(this.Next);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.textBox1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form3";
             this.Text = "Form3";
             this.ResumeLayout(false);

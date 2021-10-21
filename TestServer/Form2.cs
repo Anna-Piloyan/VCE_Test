@@ -30,8 +30,7 @@ namespace TestServer
         IGenericRepository<Group> rGroups;
         IGenericRepository<DAL1.Model.Test> rTests;
         IGenericRepository<TestGroup> rTestGroups;
-
-       // static List<Client> ListOfClients = new List<Client>();//хто буде проходити тести
+        IGenericRepository<Result> rResults;
 
         private bool isCollapsed;
         string str = "";
@@ -47,23 +46,22 @@ namespace TestServer
             rGroups = work.Repository<Group>();
             rTests = work.Repository<DAL1.Model.Test>();
             rTestGroups = work.Repository<TestGroup>();
+            rResults = work.Repository<Result>();
             adminThread = new Thread(new ThreadStart(Listener));
             adminThread.IsBackground = true;
             adminThread.Start();           
         }
 
         private void Listener()
-        {
-           
+        {          
             try
             {
                 listener = new TcpListener(IPAddress.Parse("127.0.0.1"), port);
-                listener.Start();
-               
+                listener.Start();             
                 while (true)
                 {
                     client = listener.AcceptTcpClient();                  
-                    ClientObject clientObject = new ClientObject(client, listener, rUsers, rGroups, rTests, rTestGroups);
+                    ClientObject clientObject = new ClientObject(client, listener, rUsers, rGroups, rTests, rTestGroups, rResults);
                     // создаем новый поток для обслуживания нового клиента
                     Thread clientThread = new Thread(new ThreadStart(clientObject.Process));
                     clientThread.Start();
@@ -71,9 +69,7 @@ namespace TestServer
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Server form2 Exception");
                 MessageBox.Show(ex.Message);
-
             }
             finally
             {
@@ -81,14 +77,7 @@ namespace TestServer
                  //   listener.Stop();
             }
           
-        }
-
-
-
-
-
-
-        
+        }       
         private void UnvisibleControls()
         {           
             label2.Visible = false;
@@ -222,15 +211,9 @@ namespace TestServer
                         Author = test.Author,
                         QtyOfQuestions = Convert.ToInt32(test.QuestionCount),
                         Difficulty = Convert.ToInt32(test.Difficulty)
-
-                    };
-                  //  if (tests.Title.Contains(openFileDialog1.SafeFileName))
-                  //  {
+                    };                 
                         rTests.Add(tests);
                         work.SaveChanges();
-                  //  }
-                  //  else
-                     //   MessageBox.Show("Test already exists in List");
                 };
 
                 int idTest = rTests.GetAllData().Max(t => t.Id);
@@ -648,14 +631,8 @@ namespace TestServer
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
-
             work.Dispose();
-          //  adminThread.Close();
-            //foreach (var item in ListOfClients)
-            //{
-            //    item.Dispose();
-            //}
-
+            client.Close();
         }
     }    
 }
