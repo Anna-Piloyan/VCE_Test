@@ -1,51 +1,36 @@
 <?xml version="1.0"?>
 <Test xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Author>David</Author>
+  <Author>John</Author>
   <TestName>Plus</TestName>
-  <QuestionCount>3</QuestionCount>
-  <Difficulty>1</Difficulty>
+  <QuestionCount>2</QuestionCount>
+  <Difficulty>2</Difficulty>
   <Question>
-    <Description>5+5</Description>
+    <Description>2+2</Description>
     <Answer>
-      <Description>3</Description>
+      <Description>5</Description>
       <IsRight>False</IsRight>
     </Answer>
     <Answer>
-      <Description>10</Description>
+      <Description>4</Description>
+      <IsRight>True</IsRight>
+    </Answer>
+    <Answer>
+      <Description>6</Description>
+      <IsRight>False</IsRight>
+    </Answer>
+  </Question>
+  <Question>
+    <Description>4+4</Description>
+    <Answer>
+      <Description>8</Description>
       <IsRight>True</IsRight>
     </Answer>
     <Answer>
       <Description>9</Description>
       <IsRight>False</IsRight>
     </Answer>
-  </Question>
-  <Question>
-    <Description>12+16</Description>
-    <Answer>
-      <Description>21</Description>
-      <IsRight>False</IsRight>
-    </Answer>
-    <Answer>
-      <Description>56</Description>
-      <IsRight>False</IsRight>
-    </Answer>
-    <Answer>
-      <Description>28</Description>
-      <IsRight>True</IsRight>
-    </Answer>
-  </Question>
-  <Question>
-    <Description>8+4</Description>
-    <Answer>
-      <Description>12</Description>
-      <IsRight>True</IsRight>
-    </Answer>
     <Answer>
       <Description>7</Description>
-      <IsRight>False</IsRight>
-    </Answer>
-    <Answer>
-      <Description>99</Description>
       <IsRight>False</IsRight>
     </Answer>
   </Question>

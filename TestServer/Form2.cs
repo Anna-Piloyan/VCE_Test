@@ -632,7 +632,7 @@ namespace TestServer
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
             work.Dispose();
-            client.Close();
+           // client.Close();
         }
     }    
 }
