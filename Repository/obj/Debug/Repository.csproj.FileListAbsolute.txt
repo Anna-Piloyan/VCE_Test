@@ -31,4 +31,3 @@ D:\MyProject_TestCreate\Repository\obj\Debug\Repository.csproj.CoreCompileInputs
 D:\MyProject_TestCreate\Repository\obj\Debug\Repository.csproj.CopyComplete
 D:\MyProject_TestCreate\Repository\obj\Debug\Repository.dll
 D:\MyProject_TestCreate\Repository\obj\Debug\Repository.pdb
-D:\Анна\ITStep Программирование\MyProject_TestCreate\Repository\obj\Debug\Repository.csproj.AssemblyReference.cache

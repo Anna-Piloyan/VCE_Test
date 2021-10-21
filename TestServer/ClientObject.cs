@@ -106,7 +106,7 @@ namespace TestServer
                     }
                     if (log_pass[0] == "PassTest")
                     {
-                        string testToPass = log_pass[1];                      
+                        string testToPass = log_pass[1];
                         try
                         {
                             var testF = rTests.FirstOrDefault(g => g.Title == testToPass);
@@ -115,7 +115,7 @@ namespace TestServer
                             else
                             {
                                // string path = @"..\..\bin\Debug\TestFolder\";
-                                string path = @"D:\MyProject_TestCreate\TesterDesign\bin\Debug\TestFolder\" + testToPass + ".xml";                             
+                                string path = @"D:\Анна\ITStep Программирование\MyProject_TestCreate\TesterDesign\bin\Debug\TestFolder\" + testToPass + ".xml";                             
                                 byte[] buffer = Encoding.UTF8.GetBytes(File.ReadAllText(path));
                                 stream.Write(buffer, 0, buffer.Length);                            
                             }

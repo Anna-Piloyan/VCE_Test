@@ -142,13 +142,14 @@ namespace TestClient1
         }
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
-          
-            if (streamForm2 != null)
-                streamForm2.Close();
+
+            //if (streamForm2 != null)
+            //    streamForm2.Close();
             //if (clientForm2 != null)
             //    clientForm2.Close();
-            //streamForm3.Close();
-            //clientForm3.Close();
+            streamForm2.Close();
+            clientForm2.Close();
+            
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
